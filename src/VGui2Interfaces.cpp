@@ -116,7 +116,7 @@ bool InitializeVGui2Interfaces( const char *_moduleName, CreateInterfaceFn *fact
 			localizeInterface = (ILocalize *)factories[i]( VGUI_LOCALIZE_INTERFACE_VERSION, nullptr );
 
 		if ( fileSystemInterface == nullptr )
-			fileSystemInterface = (IFileSystem *)factories[i]( FILESYSTEM_INTERFACE_VERSION, nullptr );
+			fileSystemInterface = (IFileSystem *)factories[i]( "VFileSystem009", nullptr );
 
 		if ( panelInterface == nullptr )
 			panelInterface = (IPanel *)factories[i]( VGUI_PANEL_INTERFACE_VERSION, nullptr );

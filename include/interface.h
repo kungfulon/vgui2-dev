@@ -35,6 +35,10 @@
 
 void *Sys_GetProcAddress( void *pModuleHandle, const char *pName );
 
+// HACK: Detect Xash3D FWGS
+#ifdef VFILESYSTEM009_H
+class IBaseInterface;
+#else
 // All interfaces derive from this.
 class IBaseInterface
 {
@@ -42,7 +46,7 @@ public:
 
 	virtual			~IBaseInterface() {}
 };
-
+#endif
 
 #define CREATEINTERFACE_PROCNAME	"CreateInterface"
 typedef IBaseInterface* (*CreateInterfaceFn)(const char *pName, int *pReturnCode);

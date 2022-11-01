@@ -1,7 +1,12 @@
 #ifndef VGUI2INTERFACES_H
 #define VGUI2INTERFACES_H
 
+// HACK: Detect Xash3D FWGS
+#ifdef XASH_BUILD_COMMIT
+#include "VFileSystem009.h"
+#else
 #include "FileSystem.h"
+#endif
 #include "IInput.h"
 #include "IInputInternal.h"
 #include "IKeyValues.h"
